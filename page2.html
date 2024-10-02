@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2 - Wordle Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-color: #333;
+        }
+        #wordleGame {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            margin: 10px;
+
+            padding: 30px;
+            font-size: 18px;
+            border-radius: 20px;
+            border: 1px solid #000
+        }
+        button {
+            padding: 20px 30px;
+            font-size: 16px;
+            color: #333;
+            background-color: #fff;
+            margin: 20px 20px;
+            border: 1px solid black;
+            border-radius: 20px;
+            
+        }
+        p {
+            font-size: 16px;
+        }
+        li {
+            font-size: 18px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Wordle Game</h1>
+    <div id="wordleGame">
+        <input type="text" id="guess" maxlength="5" placeholder="Enter your guess: ">
+        <button onclick="checkWord()">Submit Guess</button>
+        <p id="message"></p>
+    </div>
+    <div>
+        <h3>Rules:</h3>
+        <ul>
+            <li>You have 6 chances to guess the correct 5-letter word.</li>
+            <li>If you guess the correct word, you nee powlikum.</li>
+            <li>If you fail to guess the word, ile nee poliyum.</li>
+        </ul>
+    </div>
+
+    <script>
+        const solution = 'TECHY';
+        let attempts = 0;
+        const maxAttempts = 6;
+
+        function checkWord() {
+            let guess = document.getElementById('guess').value.toUpperCase();
+            attempts++;
+
+            if (guess === solution) {
+                document.getElementById('message').textContent = 'Congratulations! Correct word.';
+                setTimeout(() => window.location.href = 'page3.html', 2000);
+            } else if (attempts >= maxAttempts) {
+                document.getElementById('message').textContent = 'Sorry, you ran out of guesses.';
+                setTimeout(() => window.location.href = 'page4.html', 2000);
+            } else {
+                document.getElementById('message').textContent = `Incorrect! You have ${maxAttempts - attempts} attempts left.`;
+            }
+        }
+    </script>
+</body>
+</html>

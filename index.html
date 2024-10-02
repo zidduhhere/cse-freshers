@@ -1,7 +1,44 @@
-<html>
-  <title>This is demo</title>
-  <body>
-
-    <p>This is the site</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1 - Image and Timer</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 1080px;
+        }
+        button {
+            padding: 20px 40px;
+            font-size: 16px;
+            margin-top: 20px;
+            border-radius: 40px;
+            border: none;
+            color: white;
+            background-color: #333333;
+            font-weight: 600;
+            font-size: 2em;
+        }
+    </style>
+    <script>
+        setTimeout(function() {
+            window.location.href = "page2.html";
+        }, 10000); // 10-second timer to move to the next page
+    </script>
+</head>
+<body>
+    <img src="image1920x1080.jpg" alt="Image" />
+    <button onclick="window.location.href='page2.html'">Baa povaah</button>
+</body>
 </html>
